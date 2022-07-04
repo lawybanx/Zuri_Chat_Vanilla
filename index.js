@@ -5,9 +5,13 @@ form.addEventListener('submit', e => {
   const input = document.querySelector('input');
   const inputValue = input.value;
 
-  const ul = document.querySelector('ul');
-  const li = document.createElement('li');
-  li.textContent = inputValue;
-  ul.appendChild(li);
-  input.value = '';
+  if (inputValue.trim() === '') {
+    alert('Message cannot be empty');
+  } else {
+    const ul = document.querySelector('ul');
+    const li = document.createElement('li');
+    li.textContent = inputValue;
+    ul.appendChild(li);
+    input.value = '';
+  }
 });
