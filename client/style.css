@@ -61,12 +61,16 @@ ul {
   align-items: flex-end;
 }
 
-ul:first-child{
-  background-color: red;
+ul li:first-of-type {
+  width: 100%;
+  align-self: center;
+  background-color: #919191;
+  border: none;
+  border-radius: 0;
 }
 
 li {
-  margin: 1rem;
+  margin: 0.5rem;
   list-style: none;
   border: 1px solid #333;
   border-radius: 5px;

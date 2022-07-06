@@ -1,11 +1,15 @@
 import { io } from 'socket.io-client';
 
-const form = document.querySelector('form');
-
 const socket = io('http://localhost:3000');
-socket.on('connect', () => { 
+socket.on('connect', () => {
   displayMessage(`You are connected with id: ${socket.id}`);
- })
+});
+
+socket.on('chat message', message => {
+  displayMessage(message);
+});
+
+const form = document.querySelector('form');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -13,9 +17,11 @@ form.addEventListener('submit', e => {
   const inputValue = input.value;
 
   if (inputValue.trim() === '') {
-    alert('Message cannot be empty');
+    return;
   } else {
     displayMessage(inputValue);
+    socket.emit('chat message', inputValue);
+
     input.value = '';
   }
 });
