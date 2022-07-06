@@ -1,0 +1,16 @@
+{
+  "name": "zuri_chat_vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "snowpack dev"
+  },
+  "author": "Muhammad-awwal Bankole",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io-client": "^4.5.1"
+  },
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  }
+}
